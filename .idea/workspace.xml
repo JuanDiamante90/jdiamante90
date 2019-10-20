@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59bc038e-82d9-46db-aece-7efedb79b86d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/PageObjects/PageObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PageObjects/resultsPageObjects.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PageObjects/ResultsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PageFactory/resultsPageFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test/resultsPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/resultsPageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PageObjects/resultsPageObjects.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/resultsPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/ResultsPageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/testSetUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/TestSetUp.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +59,29 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="ResultsPageTests.secondItemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SDET-Deviget test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.ResultsPageTests" />
+      <option name="METHOD_NAME" value="secondItemTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ResultsPageTests.secondItemTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
