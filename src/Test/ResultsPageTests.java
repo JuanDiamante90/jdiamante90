@@ -1,31 +1,29 @@
 package Test;
 
 import PageObjects.ResultsPage;
+import Utils.TestSetUp;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
 @RunWith(JUnit4.class)
-public class ResultsPageTests {
+public class ResultsPageTests extends TestSetUp {
 
     static WebDriver driver;
     ResultsPage ResultsPageElements;
-
-    @Before
-    public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "/Users/juandiamante/Downloads/chromedriver");
-
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("http://www.aliexpress.com/");
-    }
 
     @Test
     public void secondItemTest() {
@@ -44,20 +42,18 @@ public class ResultsPageTests {
         //Scroll to the bottom
         ResultsPageElements.scrollToBottom();
 
+        //Go to second page
         ResultsPageElements.fillPageNumberTextBox();
+        ResultsPageElements.clickOnGoButton();
 
+        //Click on the second item
+        ResultsPageElements.tapOnSecondListItem();
 
+        //Dismiss pop up
+        ResultsPageElements.dismissPopUp();
 
-
-
-
-
-
-    }
-
-    @After
-    public void tearDown(){
-        driver.close();
+        //Assert that buy now is enabled
+        ResultsPageElements.assertBuyNow();
     }
 
 }
