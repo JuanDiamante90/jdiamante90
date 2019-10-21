@@ -1,5 +1,6 @@
-package Utils;
+package utils;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +15,7 @@ public class TestSetUp  {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "/Users/juandiamante/Downloads/chromedriver");
+        WebDriverManager.chromedriver().setup();
         final ChromeOptions options = new ChromeOptions();
         options.addArguments("start-fullscreen");
 

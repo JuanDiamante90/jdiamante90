@@ -1,13 +1,10 @@
 package Test;
 
-import PageObjects.ResultsPage;
-import Utils.TestSetUp;
-import com.sun.tools.classfile.Dependency;
+import page_objects.ResultsPage;
+import utils.TestSetUp;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 @RunWith(JUnit4.class)
@@ -17,7 +14,7 @@ public class ResultsPageTests extends TestSetUp {
 
     @Test
     public void secondItemTest() {
-        ResultsPageElements = PageFactory.initElements(driver, PageObjects.ResultsPage.class);
+        ResultsPageElements = PageFactory.initElements(driver, page_objects.ResultsPage.class);
 
         //Dismiss pop up if necessary
         ResultsPageElements.dismissPopUp();
