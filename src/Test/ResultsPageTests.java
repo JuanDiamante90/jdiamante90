@@ -1,7 +1,6 @@
 package Test;
 
 import PageObjects.ResultsPage;
-import Utils.TestSetUp;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,7 +9,6 @@ import org.junit.runners.JUnit4;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-import sun.jvm.hotspot.debugger.Page;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class ResultsPageTests {
 
     static WebDriver driver;
-    ResultsPage ResultsPageElements = PageFactory.initElements(driver, PageObjects.ResultsPage.class);
+    ResultsPage ResultsPageElements;
 
     @Before
     public void setUp() {
@@ -31,8 +29,30 @@ public class ResultsPageTests {
 
     @Test
     public void secondItemTest() {
+        ResultsPageElements = PageFactory.initElements(driver, PageObjects.ResultsPage.class);
+
+        //Dismiss pop up if necessary
+        ResultsPageElements.dismissPopUp();
+
+        //Fill search field and enter
         ResultsPageElements.fillSearchBox();
         ResultsPageElements.tapOnSearch();
+
+        //Dismiss pop up on second page
+        ResultsPageElements.dismissPopUp();
+
+        //Scroll to the bottom
+        ResultsPageElements.scrollToBottom();
+
+        ResultsPageElements.fillPageNumberTextBox();
+
+
+
+
+
+
+
+
     }
 
     @After
