@@ -6,30 +6,33 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ResultsPage extends PageObject{
+public class ResultsPage {
 
-    public ResultsPage(WebDriver driver) {
-        super(driver);
-        PageFactory.initElements(driver, this);
-    }
+    final WebDriver driver;
 
     //Elements
-    @FindBy(xpath = ("//input[@id='search-key']"))
-    private WebElement searchBox;
+    @FindBy(xpath = "//input[@id='search-key']")
+    WebElement searchBox;
 
-    @FindBy(xpath = ("//input[@type='submit']"))
-    private WebElement searchButton;
+    @FindBy(xpath = "//input[@type='submit']")
+    WebElement searchButton;
 
     //Data
     public String keyword = "iPhone";
 
+    //Constructor
+    public ResultsPage(WebDriver driver){
+        //Initialise Elements
+        this.driver = driver;
+    }
+
     //Actions
     public void fillSearchBox() {
-        this.searchBox.sendKeys(keyword);
+        searchBox.sendKeys(keyword);
     }
 
     public void tapOnSearch() {
-        this.searchButton.click();
+        searchButton.click();
     }
 
 }

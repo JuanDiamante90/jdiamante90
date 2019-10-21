@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59bc038e-82d9-46db-aece-7efedb79b86d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/PageObjects/ResultsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_0_18.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_25_0_jre.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_23_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_compat_qual_2_0_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PageObjects/resultsPageObjects.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test/resultsPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/ResultsPageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils/testSetUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/TestSetUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDET-Deviget test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SDET-Deviget test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PageObjects/PageObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PageObjects/ResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PageObjects/ResultsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/ResultsPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test/ResultsPageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/TestSetUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/TestSetUp.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +45,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.16666667" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
