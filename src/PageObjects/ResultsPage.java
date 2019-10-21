@@ -1,19 +1,18 @@
 package PageObjects;
 
-import static org.junit.Assert.*;
+import Utils.TestUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ResultsPage {
+import static org.junit.Assert.assertTrue;
 
-    final WebDriver driver;
+public class ResultsPage extends TestUtils{
 
     //Elements
     @FindBy(xpath = "//input[@id='search-key']")
@@ -28,14 +27,17 @@ public class ResultsPage {
     @FindBy(xpath = "//input[@aria-label='Large']")
     WebElement pageNumberTextBox;
 
-    @FindBy(xpath = "//span[@class='jump-btn']")
+    @FindBy(xpath = "//button[@aria-label='Next page, current page 1']")
     WebElement goButton;
 
     @FindBy(xpath = "//li[@class='list-item'] [1]/div/div[2]/div[1]/div[1]/a")
     WebElement secondItemList;
 
-    @FindBy(xpath = "//button[@class='next-btn next-large next-btn-primary buynow'")
+    @FindBy(xpath = "//button[@class='next-btn next-large next-btn-primary buynow']")
     WebElement buyNow;
+
+    @FindBy(css = "div.product-quantity-info > div > span")
+    WebElement itemsAvailable;
 
     //Data
     public String keyword = "iPhone";
@@ -56,20 +58,17 @@ public class ResultsPage {
         searchButton.click();
     }
 
-    public void scrollToBottom() {
-        ((JavascriptExecutor) driver)
-                .executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    public void scrollToNext() {
+        scrollForView(goButton);
     }
 
     public void fillPageNumberTextBox() {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(pageNumberTextBox);
+        moveToElement(pageNumberTextBox);
         pageNumberTextBox.sendKeys(pageNumber);
     }
 
     public void clickOnGoButton() {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(goButton);
+        moveToElement(goButton);
         goButton.click();
     }
 
@@ -91,6 +90,14 @@ public class ResultsPage {
 
     public void assertBuyNow() {
         assertTrue(buyNow.isEnabled());
+    }
+
+    public void assertItemsAreAvailable() {
+        //If product quantity doesn't start with zero, then there's items available
+        // I'm assuming how the text is displayed when no items are available because I couldn't find an example
+        itemsAvailable.isDisplayed();
+        String itemCount = itemsAvailable.getText();
+        assertTrue(!itemCount.startsWith("0"));
     }
 
 }

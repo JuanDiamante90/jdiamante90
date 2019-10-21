@@ -2,27 +2,17 @@ package Test;
 
 import PageObjects.ResultsPage;
 import Utils.TestSetUp;
-import org.junit.After;
-import org.junit.Before;
+import com.sun.tools.classfile.Dependency;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.concurrent.TimeUnit;
 
 @RunWith(JUnit4.class)
 public class ResultsPageTests extends TestSetUp {
 
-    static WebDriver driver;
     ResultsPage ResultsPageElements;
 
     @Test
@@ -41,9 +31,10 @@ public class ResultsPageTests extends TestSetUp {
 
         //Scroll to the bottom
         ResultsPageElements.scrollToBottom();
+        ResultsPageElements.scrollPageByPixels(-600);
 
         //Go to second page
-        ResultsPageElements.fillPageNumberTextBox();
+        //ResultsPageElements.fillPageNumberTextBox();
         ResultsPageElements.clickOnGoButton();
 
         //Click on the second item
@@ -53,7 +44,9 @@ public class ResultsPageTests extends TestSetUp {
         ResultsPageElements.dismissPopUp();
 
         //Assert that buy now is enabled
-        ResultsPageElements.assertBuyNow();
-    }
+        ResultsPageElements.scrollPageByPixels(500);
 
+        //Assert that items available is displayed
+        ResultsPageElements.assertItemsAreAvailable();
+    }
 }
